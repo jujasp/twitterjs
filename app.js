@@ -4,17 +4,6 @@ const morgan = require('morgan');
 const nunjucks=require('nunjucks');
 
 
-
-var locals = {
-    title: 'twitterjs',
-    people: [
-        { name: 'Gandalf'},
-        { name: 'Frodo' },
-        { name: 'Hermione'}
-    ]
-};
-
-
 app.set('view engine', 'html');
 app.engine('html',nunjucks.render);
 nunjucks.configure('views', { noCache: true});
@@ -26,7 +15,7 @@ nunjucks.configure('views', { noCache: true});
 
 app.get('/', function(req, res) {
     const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
-	return res.render('index', {title: 'Hall of Fame', people: people})
+	return res.render('index', {title: 'twitter.js', people: people})
 });
 
 //-----------------------------------------------
